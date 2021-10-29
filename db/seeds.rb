@@ -41,11 +41,11 @@ Category.create!([
 ])
 
 Test.create!([
-  {title: 'Test 1', level: 0, category_id: Category.first.id, author_id: User.first.id},
-  {title: 'Test 2', level: 0, category_id: Category.all[1].id, author_id: User.all[1].id},
-  {title: 'Test 3', level: 2, category_id: Category.all[2].id, author_id: User.all[2].id},
-  {title: 'Test 4', level: 1, category_id: Category.all[0].id, author_id: User.all[3].id},
-  {title: 'Test 5', level: 2, category_id: Category.all[2].id, author_id: User.all[4].id}
+  {title: 'Test 1', level: 0, category_id: Category.first.id, author_id: User.first.id, user_id: User.first.id},
+  {title: 'Test 2', level: 0, category_id: Category.all[1].id, author_id: User.all[1].id, user_id: User.first.id},
+  {title: 'Test 3', level: 2, category_id: Category.all[2].id, author_id: User.all[2].id, user_id: User.first.id},
+  {title: 'Test 4', level: 1, category_id: Category.all[0].id, author_id: User.all[3].id, user_id: User.first.id},
+  {title: 'Test 5', level: 2, category_id: Category.all[2].id, author_id: User.all[4].id, user_id: User.first.id}
 ])
 
 Question.create!([
