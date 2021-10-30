@@ -1,7 +1,7 @@
 class User < ApplicationRecord
+	has_many :tests, through: :results
 
 	def find_by_level(level)
-		User.joins('JOIN tests ON test.user_id = user.id').where(levels: {level: level})
-		#.user_id = users.id ON tests.level = ?', level)#.where(tests: {level: level})
+		Test.joins('JOIN users ON users.id = tests.user_id').where(tests: {level: level}).pluck(:title)
 	end
 end
