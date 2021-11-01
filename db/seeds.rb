@@ -41,3 +41,4 @@ ansewrs= Answer.create!([
                       { body: 'answer 5', correct: true, question_id: questions[2].id },
                       { body: 'answer 6', correct: false, question_id: questions[2].id }
   ])
+  
