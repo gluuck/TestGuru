@@ -11,22 +11,17 @@ class Test < ApplicationRecord
   validates :title, presence: true, uniqueness: true
   validates :level, numericality: { only_integer: true }, uniqueness: true
 
-  scope :complexity, -> (level) {
-    find = ->{where(level: level)}
-    case level
-    when (0..1)
-      find.call
-    when (2..4)
-      find.call
-    when (5..Float::INFINITY)
-      find.call
-    end
-  }
+  scope :lite, -> {where(level: 0..1)}
+  scope :medium, -> {where(level: 2..4)}
+  scope :hard, -> {where(level: 5..Float::INFINITY)}
 
   scope :test_titles, ->(title){
     joins(:category)
       .where(categories: { title: title })
-      .order(title: :desc)
-      .pluck(:title)      
+      .order(title: :desc)    
   }
+
+  def self.find_titles(title)
+    test_titles(title).pluck(:title)
+  end
 end

@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
 class Answer < ApplicationRecord
-  belongs_to :question
-
-  scope :find_true_answer, -> {where(correct: true)}
+  belongs_to :Question
 
   validates :body, presence: true
-  validate :validate_count_answers
+  validate :validate_count_answers, on: :create
+
+  scope :find_true_answer, -> {where(correct: true)}
 
   private
 
   def validate_count_answers
-    errors.add(:base, 'Maximum answers must be 4') if question.answers.count > 4
+    errors.add(:base, 'Maximum answers must be 4') if question.answers.count > 3
   end
 end
