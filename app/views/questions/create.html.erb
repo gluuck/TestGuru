@@ -1,0 +1,32 @@
+<h1>Questions#create</h1>
+
+ <div class="field">
+    <%= form.label :test_id %>
+    <%= form.text_field :test_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %> <br>
+
+  <form action='/questions' method='post'>
+    <p> 
+      <label for='question-body'>Body</label> 
+      <input type='text' name = question[body] id = question-body> 
+    </p><br>
+    <p>
+      <label for='question-body'>Test id</label> 
+      <input type='text' name = question[test_id] id = question-test>
+    </p> <br>
+      <input type='submit' value= 'Create'> 
+  </form>
+  </div>
