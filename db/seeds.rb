@@ -17,13 +17,13 @@ categories = Category.create!([
 tests = Test.create!([
                       { title: 'Test 1', level: 0, category: categories[0],
                         author: users[0] },
-                      { title: 'Test 2', level: 0, category: categories[0],
+                      { title: 'Test 2', level: 1, category: categories[0],
                         author: users[0] },
                       { title: 'Test 3', level: 2, category: categories[2],
                         author: users[0] },
-                      { title: 'Test 4', level: 1, category: categories[1],
+                      { title: 'Test 4', level: 3, category: categories[1],
                         author: users[-1] },
-                      { title: 'Test 5', level: 2, category: categories[2],
+                      { title: 'Test 5', level: 4, category: categories[2],
                         author: users[-1] }
   ])
 

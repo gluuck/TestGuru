@@ -1,13 +1,19 @@
 class QuestionsController < ApplicationController
-  before_action :find_question
+  before_action :find_question, only: %i[show update destroy]
+
+  rescue_from ActiveRecord::RecordNotFound, with: :resque_with_question_not_found
 
   def index
     @questions = Question.last(10)
   end
 
+  def new
+    @question = Question.new
+  end
+
   def show
-    if @question
-      redirect_to question_path
+    if @question.persisted?
+      @question
     else
       render plain: 'Question wasn\'t found', status: 404
     end
@@ -16,18 +22,17 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     if @question.save
-      redirect_to questions_index_path
+      redirect_to @question
     else
-      render plain: 'Cannot create question', status: 422
+      render json: @question.errors.full_messages 
     end
   end
 
   def destroy
-    if @question
-      @question.destroy
+    if  @question.destroy
       redirect_to test_questions_path
     else
-      render plain: 'Question not found' , status: 404
+      render json: @question.errors.full_messages   
     end
   end
 
@@ -38,6 +43,10 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:id, :body, :test)
+    params.require(:question).permit(:id, :body, :test_id)
+  end
+
+  def resque_with_question_not_found
+    render plain: 'Question not found' , status: 404
   end
 end
