@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class Answer < ApplicationRecord
-  belongs_to :Question
+
+  belongs_to :question
 
   validates :body, presence: true
   validate :validate_count_answers, on: :create
@@ -13,4 +14,5 @@ class Answer < ApplicationRecord
   def validate_count_answers
     errors.add(:base, 'Maximum answers must be 4') if question.answers.count > 3
   end
+
 end
