@@ -15,7 +15,7 @@ class QuestionsController < ApplicationController
     if @question.save
       redirect_to test_path(@test)
     else
-      render json: @question.errors.full_messages
+      render :new
     end
   end
 
