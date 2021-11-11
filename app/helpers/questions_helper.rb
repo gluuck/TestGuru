@@ -1,15 +1,11 @@
 module QuestionsHelper
-
-  def questions_count(test)
-    test.questions.count
-  end
-
-  def time_now
-    Time.now.year
+  
+  def current_year
+    Time.current.year
   end
 
   def github_url(name,repo)
-    link_to 'TestGuru', "https://github.com/#{name}/#{repo}"
+    link_to 'TestGuru', "https://github.com/#{name}/#{repo}",target: :_blank
   end
 
   def question_header(question)
