@@ -1,0 +1,9 @@
+<h1><%= @test.title%></h1>
+
+<% @questions.each do |question|%><br>
+  Question: <%= link_to "#{question.body}", question_path(question)%>
+<%end%> <br><br>
+
+<%= link_to 'Back', tests_path%><br>
+
+<%= link_to 'New question', new_test_question_path(@test)%><br>
