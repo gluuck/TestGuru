@@ -36,11 +36,13 @@ ActiveRecord::Schema.define(version: 2021_10_30_071159) do
   end
 
   create_table "results", force: :cascade do |t|
-    t.integer "qty", default: 0, null: false
     t.integer "user_id", null: false
     t.integer "test_id", null: false
+    t.integer "current_question_id"
+    t.integer "correct_question", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["current_question_id"], name: "index_results_on_current_question_id"
     t.index ["test_id"], name: "index_results_on_test_id"
     t.index ["user_id"], name: "index_results_on_user_id"
   end
