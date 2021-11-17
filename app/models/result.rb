@@ -10,14 +10,8 @@ class Result < ApplicationRecord
 
   before_validation :before_validation_find_first_question, on: :create
 
-  after_update :next_question, if: :not_nil?
-
   def completed?
     current_question.nil?
-  end
-
-  def not_nil?
-    !current_question.nil?
   end
 
   def results_percent
@@ -35,13 +29,13 @@ class Result < ApplicationRecord
   end
 
   private
-
+  
   def before_validation_find_first_question
     self.current_question = test.questions.first if test.present?
   end
 
   def correct_answer?(answer_ids)
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    correct_answers.ids.sort == answer_ids.to_a.map(&:to_i).sort
   end
 
   def correct_answers
