@@ -11,6 +11,10 @@
   </head>
 
   <body>
+    <% if loged_in? %>
+      <p class='nav user'>Welcome, <b><%= current_user.name %> Guru
+                  <%= link_to 'exit', session_path(session), method: :delete%></b> </p>
+    <% end %>
     <%= yield %>
     <%= render 'shared/footer' %>
   </body>
