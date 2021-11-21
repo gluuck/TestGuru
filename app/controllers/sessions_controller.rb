@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  include SessionsHelper
 
   def new
   end
@@ -12,15 +11,14 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to tests_path
+      redirect_to cookies.delete(:user_request_path) || tests_path
     else
-      flash_notice
+      flash.now[:alert] = 'Please enter email and password'
       render :new
     end
   end
 
   def destroy
-    # session.destroy
     reset_session
     redirect_to root_path
   end

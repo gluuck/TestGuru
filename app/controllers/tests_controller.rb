@@ -1,6 +1,6 @@
 class TestsController < ApplicationController
 
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   before_action :find_test, only: %i[show edit update destroy start]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
@@ -14,13 +14,13 @@ class TestsController < ApplicationController
   end
 
   def new
-    @test = Test.new
+    @test = current_user.tests.new
   end
 
   def edit;end
 
   def create
-    @test = Test.new(test_params)
+    @test = current_user.tests.new(test_params)
     if @test.save
       redirect_to @test
     else

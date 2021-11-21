@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   def authenticate_user!
     unless current_user
       cookies[:user_request_path] = request.path
-      redirect_to root_path, alert: 'Welcome'
+      redirect_to tests_path, notice: 'Welcome'
     end
   end
 
