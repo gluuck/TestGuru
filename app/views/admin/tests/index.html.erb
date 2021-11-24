@@ -2,7 +2,8 @@
   <tr>  
     <th>Title</th>
     <th>Level</th>
-    <th>Action</th>
+    <th colspan='4'>Action</th>
   </tr>
   <%= render @tests%>
 </table>
+<%= link_to 'New test', new_admin_test_path%>

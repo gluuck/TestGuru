@@ -1,24 +1,17 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception
 
-  helper_method :current_user
-  helper_method :loged_in?
+  before_action :set_user_permit, if: :devise_controller?
+
+  def after_sign_in_path_for(resource)
+    resource.is_a?(Admin) ? admin_tests_path : root_path
+  end
 
   private
 
-  def authenticate_user!
-    unless current_user
-      cookies[:user_request_path] = request.path
-      redirect_to tests_path, notice: 'Welcome'
-    end
-  end
-
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
-  end
-
-  def loged_in?
-    current_user.present?
-  end
+  def set_user_permit
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name])
+  end  
 end
