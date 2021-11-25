@@ -30,4 +30,104 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  
+  helpers:
+    submit:
+      test:
+        create: "Create Test"
+        update: "Update Test"
+      question:
+        create: "Create Question"
+        update: "Update Question"
+      answer:
+        create: "Create Answer"
+        update: "Update answer"  
+       
+    label:
+      test:
+        title: "Title"
+        level: "Level" 
+        category_id: "Category"
+      question:
+        body: "Questuin" 
+      answer:
+        body: "Answer"
+        correct: "Correct"          
+
+  tests:
+    index:
+      header: "Tricky Tests"
+      title: "Title"
+      level: "Level"
+      action: "Action"      
+    test:  
+      start: "Start"
+
+  shared:
+      errors:
+        header:
+          one: "%{count} error detected"
+        other: "%{count} errors detected"
+      footer:
+        author: "Author: "
+        year: "Year: "
+      nav:
+        header: "User`s menu - TestGuru "           
+
+  results:
+    result:
+      header: "Test #{title} full completed!"
+      link_to_back: "Back"
+      percent: "Percent"
+    show:
+      next: "Next" 
+      passing: "Passing"  
+
+  admin:
+    tests:
+      create:
+        success: "Test was created"
+      index:
+        header: "Tricky Tests" 
+        new_test: "New Test"
+        title: "Title"
+        level: "Level"
+        action: "Action"  
+      form_test:
+        back: "Back" 
+      show:
+        back: "Back" 
+        new_question: "New Question"
+        edit: "Edit"
+        delete: "Delete"
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"        
+    questions:
+      create:
+        success: "Question was created" 
+      new:
+        create_new: "Create new "  
+        question: "question" 
+      form:
+        link_to_back: "Back"       
+      edit:
+        edit: "Edit" 
+        question: "question"
+    nav:
+      admin: "Admin"
+      panel: "Panel"
+              
+
+  tests_mailer:       
+    completed_test:
+      subject: "You just completed the TestGuru test!" 
+      
+  layouts:
+    application:
+      logout: "Logout"
+      welcome: "Welcome"
+    admin:
+      logout: "Logout"
+      welcome: "Welcom"            

@@ -1,4 +1,4 @@
-<h1>Passing the: <%= @result.test.title%></h1>
+<h1><%= t('.passing')%> : <%= @result.test.title%></h1>
 <% if @result.current_question.present?%>
 	<b>
 		<%= @result.current_question.body %>
@@ -12,9 +12,9 @@
 				<%= b.label%>
 			</p>
 		<% end %>
-		<%= form.submit 'Next'%>
+		<%= form.submit t('.next')%>
 	<% end %><br>
 	<% else %>
 		<b style= 'color:#7B68EE'>Questions missing</b> <br>
-		<%= link_to 'Back', tests_path%>
+		<%= link_to t('.link_to_back'), tests_path%>
 	<% end %><br>

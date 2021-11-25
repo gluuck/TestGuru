@@ -1,3 +1,106 @@
 ru:
-  привет: "Привет мир"
+  hello: "Привет мир"
+
+  helpers:
+    submit:
+      test:
+        create: "Создать Тест"
+        update: "Обновить Тест"
+      question:
+        create: "Создать Вопрос"
+        update: "Изменить Вопрос"
+      answer:
+        create: "Создать ответ "
+        update: "Изменить Ответ"   
+       
+    label:
+      test:
+        title: "Название"
+        level: "Уровень" 
+        category_id: "Категория"
+      question:
+        body: "Вопрос" 
+      answer:
+        body: "Ответ"
+        correct: "Правильно"          
+
+  tests:
+    index:
+      header: "Доступные Тесты"
+      title: "Название"
+      level: "Уровень"
+      action: "Действие"      
+    test:  
+      start: "Старт"
+
+  shared:
+      errors:
+        header:
+          few: "Обнаружено %{count} ошибки"
+          many: "Обнаружено %{count} ошибок"
+          one: "Обнаружена %{count} ошибка"
+          other: "Обнаружено %{count} ошибок"
+      footer:
+        author: "Автор: "
+        year: "Год: "
+      nav:
+        header: "Меню пользователя - TestGuru "           
+
+  results:
+    result:
+      header: "Тест %{title} успешно завершен!"
+      link_to_back: "Назад"
+      percent: "Процент прохождения"
+    show:
+      next: "Следующий" 
+      passing: "Прохождение"  
+
+  admin:
+    tests:
+      create:
+        success: "Тест успешно создан"
+      index:
+        header: "Доступные Тесты" 
+        new_test: "Новый тест"
+        title: "Название"
+        level: "Уровень"
+        action: "Действие"  
+      form_test:
+        back: "Назад" 
+      show:
+        back: "Назад" 
+        new_question: "Новый вопрос"
+        edit: "Обновить"
+        delete: "Удалить"
+      test:
+        show: "Показать"
+        edit: "Обновить"
+        delete: "Удалить"        
+    questions:
+      create:
+        success: "Вопрос успешно создан" 
+      new:
+        create_new: "Создать новый "  
+        question: "вопрос" 
+      form:
+        link_to_back: "Назад"       
+      edit:
+        edit: "Изменить" 
+        question: "вопрос"
+    nav:
+      admin: "Администратора"
+      panel: "Панель"
+              
+
+  tests_mailer:       
+    completed_test:
+      subject: "You just completed the TestGuru test!" 
+      
+  layouts:
+    application:
+      logout: "Выход"
+      welcome: "Привет"
+    admin:
+      logout: "Выход"
+      welcome: "Привет"      
   
