@@ -1,33 +1,128 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  
+  helpers:
+    submit:
+      test:
+        create: "Create Test"
+        update: "Update Test"
+      question:
+        create: "Create Question"
+        update: "Update Question"
+      answer:
+        create: "Create Answer"
+        update: "Update answer"  
+       
+    label:
+      test:
+        title: "Title"
+        level: "Level" 
+        category_id: "Category"
+      question:
+        body: "Questuin" 
+      answer:
+        body: "Answer"
+        correct: "Correct"          
+
+  tests:
+    index:
+      header: "Tricky Tests"
+      title: "Title"
+      level: "Level"
+      action: "Action"      
+    test:  
+      start: "Start"
+
+  shared:
+      errors:
+        header:
+          one: "%{count} error detected"
+        other: "%{count} errors detected"
+      footer:
+        author: "Author: "
+        year: "Year: "
+      nav:
+        header: "User`s menu - TestGuru "           
+
+  results:
+    result:
+      header: "Test #{title} full completed!"
+      link_to_back: "Back"
+      percent: "Percent"
+    show:
+      next: "Next" 
+      passing: "Passing"  
+
+  admin:
+    tests:
+      create:
+        success: "Test was created"
+      index:
+        header: "Tricky Tests" 
+        new_test: "New Test"
+        title: "Title"
+        level: "Level"
+        action: "Action"  
+      form_test:
+        back: "Back" 
+      show:
+        back: "Back" 
+        new_question: "New Question"
+        edit: "Edit"
+        delete: "Delete"
+      test:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"        
+    questions:
+      create:
+        success: "Question was created" 
+      new:
+        create_new: "Create new "  
+        question: "question" 
+      form:
+        link_to_back: "Back"       
+      edit:
+        edit: "Edit" 
+        question: "question"
+      show:
+        question: "Question"
+        answers: "Answers"  
+        new_answer: "New Answer"
+        back: "Back"
+        edit: "Edit" 
+    answers:
+      answer:
+        show: "Show"
+        edit: "Edit"
+        delete: "Delete"
+        new_answer: "New answer"
+        back: "Back"
+      show:
+        answer: "Answer"
+        correct: "Correct"
+        edit: "Edit"
+        back: "Back"
+      edit:
+        editing_answer: "Edit answer"
+        back: "Back" 
+      new:
+        new_answer: "New answer" 
+        back: "Back"                   
+    nav:
+      admin: "Admin"
+      panel: "Panel"
+      logout: "Logout"
+      welcome: "Welcome"
+              
+
+  tests_mailer:       
+    completed_test:
+      subject: "You just completed the TestGuru test!" 
+      
+  layouts:
+    application:
+      logout: "Logout"
+      welcome: "Welcome"
+    admin:
+      logout: "Logout"
+      welcome: "Welcom"            

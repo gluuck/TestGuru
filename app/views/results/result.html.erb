@@ -1,9 +1,9 @@
-<h1><%= @result.test.title %> complited!</h1>
+<h1><%= t('.header', title: @result.test.title) %> </h1>
 
 <% if @result.test_full_completed? %>
-	<h3 style='color:#00FF00;'>Percent: <%= @result.results_percent %> %</h3>
+	<h3 style='color:#00FF00;'><%= t('.percent')%>: <%= @result.results_percent %> %</h3>
 <% else %>
-	<h3 style='color:#FF0000;'>Percent: <%= @result.results_percent %> %</h3>
+	<h3 style='color:#FF0000;'><%= t('.percent')%>: <%= @result.results_percent %> %</h3>
 <% end %><br>
 
-<%= link_to 'Back', tests_path%>
+<%= link_to t('.link_to_back'), tests_path%>
