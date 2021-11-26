@@ -87,9 +87,33 @@ ru:
       edit:
         edit: "Изменить" 
         question: "вопрос"
+      show:
+        question: "Вопрос"
+        answers: "Ответы"  
+        new_answer: "Новый вопрос"
+        back: "Назад"
+        edit: "Обновить"
+    answers:
+      answer:
+        show: "Показать"
+        edit: "Обновить"
+        delete: "Удалить" 
+      new:
+        new_answer: "Новый вопрос"
+        back: "Назад"
+      show:
+        answer: "Ответ"
+        correct: "Правильно"
+        edit: "Обновить"
+        back: "Назад"
+      edit:
+        editing_answer: "Обновить ответ"
+        back: "Назад"         
     nav:
       admin: "Администратора"
       panel: "Панель"
+      logout: "Выйти"
+      welcome: "Привет"
               
 
   tests_mailer:       
