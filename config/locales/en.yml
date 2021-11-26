@@ -95,8 +95,7 @@ en:
         show: "Show"
         edit: "Edit"
         delete: "Delete"
-      new:
-        new_answer: "New question"
+        new_answer: "New answer"
         back: "Back"
       show:
         answer: "Answer"
@@ -105,7 +104,10 @@ en:
         back: "Back"
       edit:
         editing_answer: "Edit answer"
-        back: "Back"                
+        back: "Back" 
+      new:
+        new_answer: "New answer" 
+        back: "Back"                   
     nav:
       admin: "Admin"
       panel: "Panel"

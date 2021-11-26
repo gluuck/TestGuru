@@ -78,7 +78,7 @@ ru:
         delete: "Удалить"        
     questions:
       create:
-        success: "Вопрос успешно создан" 
+        success: "Вопрос успешно создан"
       new:
         create_new: "Создать новый "  
         question: "вопрос" 
@@ -90,15 +90,14 @@ ru:
       show:
         question: "Вопрос"
         answers: "Ответы"  
-        new_answer: "Новый вопрос"
+        new_answer: "Новый ответ"
         back: "Назад"
         edit: "Обновить"
     answers:
       answer:
         show: "Показать"
         edit: "Обновить"
-        delete: "Удалить" 
-      new:
+        delete: "Удалить"      
         new_answer: "Новый вопрос"
         back: "Назад"
       show:
@@ -108,6 +107,9 @@ ru:
         back: "Назад"
       edit:
         editing_answer: "Обновить ответ"
+        back: "Назад" 
+      new:
+        new_answer: "Новый ответ" 
         back: "Назад"         
     nav:
       admin: "Администратора"
