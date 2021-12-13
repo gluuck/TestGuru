@@ -1,10 +1,14 @@
-<h1><%= t('.header') %></h1>
-<table>
-  <tr>  
-    <th><%= t('.title')%></th>
-    <th><%= t('.level')%></th>
-    <th colspan='4'><%= t('.action')%></th>
-  </tr>
-  <%= render @tests%>
-</table>
-<%= link_to t('.new_test'), new_admin_test_path%>
+<div class="row mt-3">
+  <div class="col col-md-4">
+    <h1><%= t('.header') %></h1>
+    <table class="table table-success table-striped">
+      <tr>  
+        <th><%= t('.title')%></th>
+        <th><%= t('.level')%></th>
+        <th colspan='4'><%= t('.action')%></th>
+      </tr>
+      <%= render @tests%>
+    </table>
+    <%= link_to t('.new_test'), new_admin_test_path%>
+  </div>
+</div>
