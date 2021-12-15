@@ -2,10 +2,11 @@
 	<div class="col col-md-4">
 		<h1><%= t('.passing')%> : <%= @result.test.title%></h1>
 		<% if @result.current_question.present?%>
-			<b>
-				<%= @result.current_question.body %>
-			</b>
-
+			<p>		
+				<b>
+					<%= @result.current_question.body %>
+				</b>
+			</p>
 			<%= form_with url: result_path(@result), local: true, method: :put do |form|%>
 				<%= form.collection_check_boxes :answer_ids, @result.current_question.answers,
 																				:id, :body, include_hidden: false do |b|%>
@@ -14,9 +15,10 @@
 							<%= b.check_box id: "answer_ids_#{b.object.id}", class: 'form-check-input' %>
 						<% end %>
 					</div>  
-				<% end %>
-				<%= form.submit t('.next'), class: 'btn btn-primary btn-sm'%>
-			<% end %><br>
+				<% end %>							
+				<p><%= form.submit t('.next'), class: 'btn btn-primary btn-sm'%></p>
+			<% end %>
+			<p><%= button_to 'Gist Question', gists_path(result_id: @result.id), method: :post %></p>
 		<% else %>
 			<b style= 'color:#7B68EE'>Questions missing</b> <br>
 			<%= link_to t('.link_to_back'), tests_path%>

@@ -41,7 +41,8 @@ en:
         author: "Author: "
         year: "Year: "
       nav:
-        header: "User`s menu - TestGuru "           
+        header: "User`s menu - TestGuru " 
+        log_out: "Logout"          
 
   results:
     result:
@@ -51,7 +52,9 @@ en:
     show:
       next: "Next" 
       passing: "Passing"  
-
+    gist:
+      success: "Gist was saved!"
+      failure: "Some mistakes to save gist" 
   admin:
     tests:
       create:
@@ -126,3 +129,7 @@ en:
     admin:
       logout: "Logout"
       welcome: "Welcom"            
+
+  gists:
+    create:
+      #failure: "Gist wasn\`t create"    

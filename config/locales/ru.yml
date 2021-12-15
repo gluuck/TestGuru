@@ -44,7 +44,8 @@ ru:
         author: "Автор: "
         year: "Год: "
       nav:
-        header: "Меню пользователя - TestGuru "           
+        header: "Меню пользователя - TestGuru "
+        log_out: "Выход"           
 
   results:
     result:
@@ -53,7 +54,10 @@ ru:
       percent: "Процент прохождения"
     show:
       next: "Следующий" 
-      passing: "Прохождение"  
+      passing: "Прохождение" 
+    gist:
+      success: "Gist успешно сохранен!"
+      failure: "Во время сохранения gist произошла ошибка"   
 
   admin:
     tests:
@@ -130,3 +134,6 @@ ru:
       logout: "Выход"
       welcome: "Привет"      
   
+  gists:
+    create:
+      failure: "Гист не был создан"
