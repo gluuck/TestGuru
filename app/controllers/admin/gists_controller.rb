@@ -1,5 +1,5 @@
 class Admin::GistsController < Admin::BaseController
   def index
-    @gists = Gist.order(created_at: :desc)
+    @gists = Gist.includes(:user,:question).order(created_at: :desc)
   end  
 end

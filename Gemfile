@@ -33,7 +33,6 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'jquery-rails'
 gem 'bootstrap'
 
-gem 'faraday'
 gem "octokit", "~> 4.0"
 
 group :development, :test do
