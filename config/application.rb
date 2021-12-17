@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 require_relative 'boot'
-
+require "sprockets/railtie"
 require 'rails/all'
+require 'dotenv'
+Dotenv.load
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -14,5 +16,6 @@ module TestGuru
     config.time_zone = 'Moscow'
     config.i18n.default_locale = :ru
     I18n.available_locales = [:en, :ru]
+    config.autoload_paths << "#{Rails.root}/lib/clients"
   end
 end

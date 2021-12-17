@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :results, dependent: :destroy
   has_many :tests , through: :results, dependent: :destroy
   has_many :author_tests, foreign_key: :author_id, class_name: 'Test', dependent: :destroy
+  has_many :gists, dependent: :destroy
 
   validates :first_name, presence: true
   validates :last_name, presence: true
