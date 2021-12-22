@@ -1,7 +1,7 @@
 class ResultsController < ApplicationController
-  
+
   skip_before_action :verify_authenticity_token
-  
+
   before_action :authenticate_user!
   before_action :set_result, only: %i[show update result]
 
@@ -20,7 +20,7 @@ class ResultsController < ApplicationController
       render :show
     end
   end
-  
+
   private
 
   def set_result

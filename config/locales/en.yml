@@ -1,5 +1,5 @@
 en:
-  
+
   helpers:
     submit:
       test:
@@ -10,26 +10,26 @@ en:
         update: "Update Question"
       answer:
         create: "Create Answer"
-        update: "Update answer"  
-       
+        update: "Update answer"
+
     label:
       test:
         title: "Title"
-        level: "Level" 
+        level: "Level"
         category_id: "Category"
       question:
-        body: "Questuin" 
+        body: "Questuin"
       answer:
         body: "Answer"
-        correct: "Correct"          
+        correct: "Correct"
 
   tests:
     index:
       header: "Tricky Tests"
       title: "Title"
       level: "Level"
-      action: "Action"      
-    test:  
+      action: "Action"
+    test:
       start: "Start"
 
   shared:
@@ -41,8 +41,8 @@ en:
         author: "Author: "
         year: "Year: "
       nav:
-        header: "User`s menu - TestGuru " 
-        log_out: "Logout"          
+        header: "User`s menu - TestGuru "
+        log_out: "Logout"
 
   results:
     result:
@@ -50,49 +50,51 @@ en:
       link_to_back: "Back"
       percent: "Percent"
     show:
-      next: "Next" 
-      passing: "Passing"  
+      next: "Next"
+      passing: "Passing"
     gist:
       success: "Gist was saved!"
-      failure: "Some mistakes to save gist" 
+      failure: "Some mistakes to save gist"
   admin:
     tests:
       create:
         success: "Test was created"
       index:
-        header: "Tricky Tests" 
+        header: "Tricky Tests"
         new_test: "New Test"
         title: "Title"
         level: "Level"
-        action: "Action"  
+        action: "Action"
       form_test:
-        back: "Back" 
+        back: "Back"
       show:
-        back: "Back" 
+        back: "Back"
         new_question: "New Question"
         edit: "Edit"
         delete: "Delete"
       test:
         show: "Show"
         edit: "Edit"
-        delete: "Delete"        
+        delete: "Delete"
+      form_inline:
+        submit: "Ok"           
     questions:
       create:
-        success: "Question was created" 
+        success: "Question was created"
       new:
-        create_new: "Create new "  
-        question: "question" 
+        create_new: "Create new "
+        question: "question"
       form:
-        link_to_back: "Back"       
+        link_to_back: "Back"
       edit:
-        edit: "Edit" 
+        edit: "Edit"
         question: "question"
       show:
         question: "Question"
-        answers: "Answers"  
+        answers: "Answers"
         new_answer: "New Answer"
         back: "Back"
-        edit: "Edit" 
+        edit: "Edit"
     answers:
       answer:
         show: "Show"
@@ -107,29 +109,29 @@ en:
         back: "Back"
       edit:
         editing_answer: "Edit answer"
-        back: "Back" 
+        back: "Back"
       new:
-        new_answer: "New answer" 
-        back: "Back"                   
+        new_answer: "New answer"
+        back: "Back"
     nav:
       admin: "Admin"
       panel: "Panel"
       logout: "Logout"
       welcome: "Welcome"
-              
 
-  tests_mailer:       
+
+  tests_mailer:
     completed_test:
-      subject: "You just completed the TestGuru test!" 
-      
+      subject: "You just completed the TestGuru test!"
+
   layouts:
     application:
       logout: "Logout"
       welcome: "Welcome"
     admin:
       logout: "Logout"
-      welcome: "Welcom"            
+      welcome: "Welcom"
 
   gists:
     create:
-      #failure: "Gist wasn\`t create"    
+      #failure: "Gist wasn\`t create"

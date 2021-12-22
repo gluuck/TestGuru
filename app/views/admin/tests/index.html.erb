@@ -1,6 +1,7 @@
 <div class="row mt-3">
   <div class="col col-md-4">
     <h1><%= t('.header') %></h1>
+    <%= render 'shared/errors', resource: @test%>
     <table class="table table-success table-striped">
       <tr>
         <th class="sort-by-title pointer"><%= t('.title')%>

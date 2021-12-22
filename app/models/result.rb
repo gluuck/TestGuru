@@ -10,6 +10,10 @@ class Result < ApplicationRecord
 
   before_validation :set_current_question
 
+  def current_question_number
+    test.questions.index(current_question) + 1
+  end
+
   def completed?
     current_question.nil?
   end

@@ -2,6 +2,12 @@
   <div class="col col-md-4">
     <h1><%= t('.passing')%> : <%= @result.test.title%></h1>
     <% if @result.current_question.present?%>
+      <div class="progress">
+         <%= content_tag :div, class: "progress-bar",
+                          data: { total: @result.test.questions.size,
+                          current: @result.current_question_number } do %>
+         <% end %>
+      </div>
       <p><b><%= @result.current_question.body %></b></p>
 
       <%= form_with url: result_path(@result), local: true, method: :put do |form|%>
@@ -11,8 +17,8 @@
             <%= b.label do %>
               <%= b.check_box id: "answer_ids_#{b.object.id}", class: 'form-check-input' %>
             <% end %>
-          </div>  
-        <% end %>							
+          </div>
+        <% end %>
         <p><%= form.submit t('.next'), class: 'btn btn-primary btn-sm'%></p>
       <% end %>
         <p><%= link_to 'Gist Question', gists_path(result_id: @result.id), method: :post %></p>
