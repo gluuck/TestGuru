@@ -11,26 +11,26 @@ ru:
         update: "Изменить Вопрос"
       answer:
         create: "Создать ответ "
-        update: "Изменить Ответ"   
-       
+        update: "Изменить Ответ"
+
     label:
       test:
         title: "Название"
-        level: "Уровень" 
+        level: "Уровень"
         category_id: "Категория"
       question:
-        body: "Вопрос" 
+        body: "Вопрос"
       answer:
         body: "Ответ"
-        correct: "Правильно"          
+        correct: "Правильно"
 
   tests:
     index:
       header: "Доступные Тесты"
       title: "Название"
       level: "Уровень"
-      action: "Действие"      
-    test:  
+      action: "Действие"
+    test:
       start: "Старт"
 
   shared:
@@ -45,7 +45,7 @@ ru:
         year: "Год: "
       nav:
         header: "Меню пользователя - TestGuru "
-        log_out: "Выход"           
+        log_out: "Выход"
 
   results:
     result:
@@ -53,47 +53,49 @@ ru:
       link_to_back: "Назад"
       percent: "Процент прохождения"
     show:
-      next: "Следующий" 
-      passing: "Прохождение" 
+      next: "Следующий"
+      passing: "Прохождение"
     gist:
       success: "Gist успешно сохранен!"
-      failure: "Во время сохранения gist произошла ошибка"   
+      failure: "Во время сохранения gist произошла ошибка"
 
   admin:
     tests:
       create:
         success: "Тест успешно создан"
       index:
-        header: "Доступные Тесты" 
+        header: "Доступные Тесты"
         new_test: "Новый тест"
         title: "Название"
         level: "Уровень"
-        action: "Действие"  
+        action: "Действие"
       form_test:
-        back: "Назад" 
+        back: "Назад"
       show:
-        back: "Назад" 
+        back: "Назад"
         new_question: "Новый вопрос"
         edit: "Обновить"
         delete: "Удалить"
       test:
         show: "Показать"
         edit: "Обновить"
-        delete: "Удалить"        
+        delete: "Удалить"
+      form_inline:
+        submit: "Ок"          
     questions:
       create:
         success: "Вопрос успешно создан"
       new:
-        create_new: "Создать новый "  
-        question: "вопрос" 
+        create_new: "Создать новый "
+        question: "вопрос"
       form:
-        link_to_back: "Назад"       
+        link_to_back: "Назад"
       edit:
-        edit: "Изменить" 
+        edit: "Изменить"
         question: "вопрос"
       show:
         question: "Вопрос"
-        answers: "Ответы"  
+        answers: "Ответы"
         new_answer: "Новый ответ"
         back: "Назад"
         edit: "Обновить"
@@ -101,7 +103,7 @@ ru:
       answer:
         show: "Показать"
         edit: "Обновить"
-        delete: "Удалить"      
+        delete: "Удалить"
         new_answer: "Новый вопрос"
         back: "Назад"
       show:
@@ -111,29 +113,29 @@ ru:
         back: "Назад"
       edit:
         editing_answer: "Обновить ответ"
-        back: "Назад" 
+        back: "Назад"
       new:
-        new_answer: "Новый ответ" 
-        back: "Назад"         
+        new_answer: "Новый ответ"
+        back: "Назад"
     nav:
       admin: "Администратора"
       panel: "Панель"
       logout: "Выйти"
       welcome: "Привет"
-              
 
-  tests_mailer:       
+
+  tests_mailer:
     completed_test:
-      subject: "You just completed the TestGuru test!" 
-      
+      subject: "You just completed the TestGuru test!"
+
   layouts:
     application:
       logout: "Выход"
       welcome: "Привет"
     admin:
       logout: "Выход"
-      welcome: "Привет"      
-  
+      welcome: "Привет"
+
   gists:
     create:
       failure: "Гист не был создан"
