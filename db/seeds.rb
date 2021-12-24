@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 users = User.create!([
-                      { name: 'Sasha', email: 'sasha@gmail.com', password: '123456' },
-                      { name: 'Masha', email: 'masha@gmail.com', password: '123456' },
-                      { name: 'Dasha', email: 'dasha@gmail.com', password: '123456' },
-                      { name: 'Vasya', email: 'vasya@gmail.com', password: '123456' },
-                      { name: 'Govar', email: 'govar@gmail.com', password: '123456' }
+                      { first_name: 'Sasha',last_name: 'Yoyo' , email: 'sasha@gmail.com', password: '123456' },
+                      { first_name: 'Masha',last_name: 'Yoyo' , email: 'masha@gmail.com', password: '123456' },
+                      { first_name: 'Dasha',last_name: 'Yoyo' , email: 'dasha@gmail.com', password: '123456' },
+                      { first_name: 'Vasya',last_name: 'Yoyo' , email: 'vasya@gmail.com', password: '123456' },
+                      { first_name: 'Govar',last_name: 'Yoyo' , email: 'govar@gmail.com', password: '123456' }
   ])
 
 categories = Category.create!([
@@ -41,4 +41,3 @@ ansewrs= Answer.create!([
                       { body: 'answer 5', correct: true, question: questions[2] },
                       { body: 'answer 6', correct: false, question: questions[2] }
   ])
-  
