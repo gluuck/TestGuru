@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   devise_for :users, path: :gurus, path_names: {sign_in: :log_in, sign_out: :logout},
               controllers: { sessions: 'sessions' }
 
+  resources :users do
+    resources :feedbacks, only: %i[new create]
+  end
+  
   resources :tests, only: :index do
     member do
       post :start
@@ -25,7 +29,7 @@ Rails.application.routes.draw do
     resources :gists, shallow: true, only: :index
     resources :tests do
       patch :update_inline, on: :member
-      
+
       resources :questions, shallow: true, except: :index do
         resources :answers, shallow:true, except: :index
       end

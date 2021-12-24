@@ -1,0 +1,8 @@
+<%= form_with model: [@user, @feedback] do |form| %>
+  <%= render 'shared/errors', resource: @feedback%>
+    <p>
+      <%= form.label :message %><br>
+      <%= form.text_field :message, id: :message %>
+    </p>
+    <p><%= form.submit%></p>
+<% end %>

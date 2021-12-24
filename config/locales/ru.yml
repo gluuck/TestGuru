@@ -81,7 +81,7 @@ ru:
         edit: "Обновить"
         delete: "Удалить"
       form_inline:
-        submit: "Ок"          
+        submit: "Ок"
     questions:
       create:
         success: "Вопрос успешно создан"
@@ -140,3 +140,7 @@ ru:
     create:
       failure: "Гист не был создан"
       success: "Gist успешно сохранен!"
+
+  feedbacks:
+    create:
+      success: "Отзыв создан"    
