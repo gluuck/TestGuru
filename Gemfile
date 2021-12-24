@@ -37,10 +37,11 @@ gem 'octicons_helper'
 
 gem "octokit", "~> 4.0"
 
+gem 'dotenv-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  gem 'dotenv-rails'
 end
 
 group :development do
@@ -64,8 +65,8 @@ group :test do
 end
 
 group :production do
- gem 'pg'
- gem 'rails_12factor'
+  gem 'pg'
+  gem 'rails_12factor'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
