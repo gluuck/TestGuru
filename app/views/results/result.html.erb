@@ -5,7 +5,5 @@
 <% else %>
 	<h3 style='color:#FF0000;'><%= t('.percent')%>: <%= @result.results_percent %> %</h3>
 <% end %><br>
-<% if cuurent_user.present?%>
-	<p><%= link_to t('.feedback'), new_user_feedback_path(current_user)%> </p>
-<% end %> <br>
+<p><%= link_to t('.feedback'), new_user_feedback_path(current_user)%> </p>
 <%= link_to t('.link_to_back'), tests_path%>
