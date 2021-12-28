@@ -1,8 +1,8 @@
 class Admin::AnswersController < Admin::BaseController
   
   before_action :authenticate_user!
-  before_action :find_question, only: %i[new create ]
-  before_action :set_answer, only: %i[show edit update destroy]
+  before_action :find_question, only: %i[new create]
+  before_action :set_answer, only: %i[show edit update]
 
   def show
   end
@@ -32,6 +32,7 @@ class Admin::AnswersController < Admin::BaseController
   end
 
   def destroy
+    @answer = Answer.find(params[:id])
     @answer.destroy
     redirect_to admin_question_path(@answer.question)
   end
