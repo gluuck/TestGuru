@@ -11,7 +11,6 @@ require("packs/utilites/progress_bar")
 require("stylesheets/application.scss")
 
 import Rails from "@rails/ujs"
-import mrujs from "mrujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
@@ -20,6 +19,5 @@ import 'bootstrap/dist/js/bootstrap'
 import 'bootstrap/dist/css/bootstrap'
 
 Rails.start()
-mrujs.start()
 Turbolinks.start()
 ActiveStorage.start()
