@@ -1,7 +1,7 @@
 class Admin::QuestionsController < Admin::BaseController
 
   before_action :authenticate_user!
-  before_action :find_question, only: %i[show update edit]
+  #before_action :find_question, only: %i[show update edit]
   before_action :find_test, only: %i[new create]
   
   rescue_from ActiveRecord::RecordNotFound, with: :resque_with_question_not_found
@@ -24,11 +24,12 @@ class Admin::QuestionsController < Admin::BaseController
   def edit;end
 
   def update
-    if @question.update(question_params)
-      redirect_to admin_test_path(@question.test)
-    else
-      render :edit
-    end
+    @question = Question.find(params[:id])
+      if @question.update(question_params)
+        redirect_to admin_test_path(@question.test)
+      else
+        render :edit
+      end
   end
 
   def destroy
