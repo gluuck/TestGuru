@@ -1,8 +1,8 @@
 class Admin::AnswersController < Admin::BaseController
   
   before_action :authenticate_user!
-  before_action :find_question, only: %i[new create]
-  #before_action :set_answer, only: %i[show edit update]
+  before_action :find_question, only: %i[new create ]
+  before_action :set_answer, only: %i[show edit update destroy]
 
   def show
   end
@@ -24,16 +24,14 @@ class Admin::AnswersController < Admin::BaseController
   end
 
   def update
-    @answer = Answer.find(params[:id])
-      if @answer.update(answer_params)
-        redirect_to admin_question_path(@answer.question)
-      else
-        render :edit
-      end
+    if @answer.update(answer_params)
+      redirect_to admin_question_path(@answer.question)
+    else
+      render :edit
+    end
   end
 
   def destroy
-    @answer = Answer.find(params[:id])
     @answer.destroy
     redirect_to admin_question_path(@answer.question)
   end
