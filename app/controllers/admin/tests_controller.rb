@@ -45,8 +45,12 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def destroy
-    @test.destroy!
-    redirect_to admin_tests_url
+    if @test.present?
+      @test.destroy!
+      redirect_to admin_tests_path
+    else
+      render :index
+    end
   end
 
   private
@@ -59,7 +63,7 @@ class Admin::TestsController < Admin::BaseController
     @tests = Test.all
   end
   def find_test
-    @test = Test.find_by(id: params[:id])
+    @test = Test.find(params[:id])
   end
 
   def rescue_with_test_not_found
