@@ -3,7 +3,7 @@ class Admin::TestsController < Admin::BaseController
   before_action :set_tests, only: %i[index update_inline]
   before_action :find_test, only: %i[show edit update destroy update_inline]
 
-  after_destroy :after_destroy_test
+  after_action :after_destroy_test
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
@@ -65,7 +65,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def after_destroy_test
-    redirect_to admin_tests_url
+    index
   end
 
   def rescue_with_test_not_found
