@@ -10,6 +10,7 @@
                                class: 'form-inline-link'%></td>
   <td class="align-middle"><%= link_to t('.delete'),
                                admin_test_path(test),
+                               data: {confirm: 'Are yuu sure?'},
                                method: :delete %>
   </td>
 </tr>
