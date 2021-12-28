@@ -19,7 +19,6 @@ Rails.application.configure do
   config.assets.compile = true
 
   config.assets.css_compressor = :sass
-  config.assets.js_compressor = :uglifier
 
   config.active_storage.service = :local
 
