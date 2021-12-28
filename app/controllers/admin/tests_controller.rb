@@ -3,8 +3,6 @@ class Admin::TestsController < Admin::BaseController
   before_action :set_tests, only: %i[index update_inline]
   before_action :find_test, only: %i[show edit update destroy update_inline]
 
-  after_action :after_destroy_test
-
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
@@ -61,11 +59,7 @@ class Admin::TestsController < Admin::BaseController
     @tests = Test.all
   end
   def find_test
-    @test = Test.find(params[:id])
-  end
-
-  def after_destroy_test
-    index
+    @test = Test.find_by(id: params[:id])
   end
 
   def rescue_with_test_not_found
