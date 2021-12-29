@@ -3,13 +3,13 @@
 class Test < ApplicationRecord
   belongs_to :category
   belongs_to :author, class_name: 'User'
-  
+
   has_many :questions, dependent: :destroy
   has_many :results, dependent: :destroy
   has_many :users, through: :results, dependent: :destroy
 
-  validates :title, presence: true, uniqueness: true
-  validates :level, numericality: { only_integer: true }
+  validates :title, presence: true, uniqueness: { scope: :level }
+  validates :level, numericality: { only_integer: true, greater_than: -1 }
 
   scope :lite, -> {where(level: 0..1)}
   scope :medium, -> {where(level: 2..4)}
@@ -18,7 +18,7 @@ class Test < ApplicationRecord
   scope :test_titles, ->(title){
     joins(:category)
       .where(categories: { title: title })
-      .order(title: :desc)    
+      .order(title: :desc)
   }
 
   def self.find_titles(title)
