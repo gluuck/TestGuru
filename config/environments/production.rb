@@ -16,10 +16,9 @@ Rails.application.configure do
 
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
-  config.assets.compile = false
+  config.assets.compile = true
 
   config.assets.css_compressor = :sass
-  config.assets.js_compressor = :uglifier
 
   config.active_storage.service = :local
 
@@ -30,6 +29,16 @@ Rails.application.configure do
 
 
   config.action_mailer.perform_caching = false
+  config.action_mailer.default_url_options = { host: 'testguru-174.herokuapp.com'}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:  'smtp.gmail.com',
+    port:      587,
+    user_name: ENV['SMTP_USERNAME'],
+    password:  ENV['SMTP_PASSWORD'],
+    authentication: 'plain',
+    enable_starttls_auto: true
+  }
 
   config.i18n.fallbacks = true
 

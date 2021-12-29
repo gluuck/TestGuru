@@ -34,7 +34,6 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'jquery-rails'
 gem 'bootstrap'
 gem 'octicons_helper'
-gem 'uglifier'
 gem "octokit", "~> 4.0"
 
 gem 'dotenv-rails'

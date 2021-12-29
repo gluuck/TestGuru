@@ -1,6 +1,6 @@
 <tr>
   <td class="align-middle">
-    <%= content_tag :span, test.title, class: 'test-title', data: {test_id: test.id} %>
+    <%= content_tag :span, test.title, class: 'test-title', data: {test_id: test.id}%>
     <%= render 'form_inline', test: test == @test ? @test : test %>
   </td>
   <td class="align-middle"><%=test.level%></td>
@@ -10,7 +10,7 @@
                                class: 'form-inline-link'%></td>
   <td class="align-middle"><%= link_to t('.delete'),
                                admin_test_path(test),
-                               method: :delete,
-                               data: {confirm: 'Are yuu sure?'}%>
+                               data: {confirm: 'Are yuu sure?'},
+                               method: :delete %>
   </td>
 </tr>

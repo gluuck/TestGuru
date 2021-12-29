@@ -38,15 +38,15 @@ class Admin::TestsController < Admin::BaseController
 
   def update_inline
     if @test.update(test_params)
-      redirect_to admin_test_path
+      redirect_to admin_tests_path
     else
       render :index
     end
   end
 
   def destroy
-    @test.destroy
-    redirect_to admin_tests_path
+    @test.destroy!
+    redirect_to admin_tests_path    
   end
 
   private
@@ -58,6 +58,7 @@ class Admin::TestsController < Admin::BaseController
   def set_tests
     @tests = Test.all
   end
+
   def find_test
     @test = Test.find(params[:id])
   end

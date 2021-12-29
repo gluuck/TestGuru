@@ -1,5 +1,5 @@
-<div class="row">
-  <div class="col col-md-4">
+<div class="row mt-100%">
+  <div class="col col-md-100%">
     <h1><%= t('.passing')%> : <%= @result.test.title%></h1>
     <% if @result.current_question.present?%>
       <div class="progress">
@@ -21,7 +21,7 @@
         <% end %>
         <p><%= form.submit t('.next'), class: 'btn btn-primary btn-sm'%></p>
       <% end %>
-        <p><%= link_to 'Gist Question', gists_path(result_id: @result.id), method: :post %></p>
+        <p><%= link_to t('.Gist Question'), gists_path(result_id: @result.id), method: :post %></p>
     <% else %>
       <b>Questions missing</b> <br>
       <%= link_to t('.link_to_back'), tests_path%>
