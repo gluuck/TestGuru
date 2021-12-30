@@ -1,2 +1,15 @@
-<h1>Admin::Badges#index</h1>
-<p>Find me in app/views/admin/badges/index.html.erb</p>
+<div class="row mt-100%">
+  <div class="col col-md-100%">
+    <h1><%= t('.header') %></h1>
+    <%= render 'shared/errors', resource: @badge%>
+    <table class="table table-primary">
+      <tr>
+        <th class="sort-by-title pointer"><%= t('.title')%></th>
+        <th><%= t('.level')%></th>
+        <th colspan='3'><%= t('.action')%></th>
+      </tr>
+      <%= render @badges%>
+    </table>
+    <%= link_to t('.new_test'), new_admin_badge_path%>
+  </div>
+</div>

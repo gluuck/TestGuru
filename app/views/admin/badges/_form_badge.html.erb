@@ -1,0 +1,21 @@
+<%= form_with model: [:admin , @badge] do |form| %>
+  <%= render 'shared/errors', resource: @badge%>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title, id: :badges_title%>
+  </p>
+  <p>
+    <%= form.label :picture %><br>
+    <%= form.text_field :picture, id: :badge_picture%>
+  </p>
+  <p>
+    <%= form.label :rule %><br>
+    <%= form.select :rule, Badge.rules.map { |key, value| [value, key] }, prompt: true %>
+  </p>
+  <p>
+    <%= form.label :parameter %><br>
+    <%= form.text_field :parameter,id: :badge_parameter %>
+  </p>
+  <p><%= form.submit%></p>
+<% end%>
+<%= link_to t('.back'), admin_badges_path %>

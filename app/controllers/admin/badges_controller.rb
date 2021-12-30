@@ -1,5 +1,5 @@
 class Admin::BadgesController < Admin::BaseController
-  before_action :set_badge
+  before_action :set_badge, only: %i[show edit update destroy]
 
   def index
     @badges = Badge.all
@@ -8,7 +8,7 @@ class Admin::BadgesController < Admin::BaseController
   def new
     @badge = Badge.new
   end
-  
+
   def show;end
 
   def edit;end
