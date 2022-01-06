@@ -5,8 +5,8 @@ class Badge < ApplicationRecord
   validates :title, :picture, presence: true
 
   enum rule: {
-    tests_by_category: 0,
-    on_the_first_attempt: 1,
-    tests_by_level: 2
+    tests_by_category: 'tests_by_category',
+    on_the_first_attempt: 'on_the_first_attempt',
+    tests_by_level: 'tests_by_level'
   }
 end

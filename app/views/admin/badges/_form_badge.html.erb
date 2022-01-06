@@ -10,7 +10,7 @@
   </p>
   <p>
     <%= form.label :rule %><br>
-    <%= form.select :rule, Badge.rules.map { |key, value| [value, key] }, prompt: true %>
+    <%= form.select :rule, Badge.rules.map{|k,v| [v.humanize, k]}, prompt: true, id: :badge_rule%>
   </p>
   <p>
     <%= form.label :parameter %><br>

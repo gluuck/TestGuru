@@ -14,6 +14,11 @@ class ResultsController < ApplicationController
   def update
     @result.accept!(params[:answer_ids])
     if @result.completed?
+
+      badges = BadgeService.new(@result).call 
+
+      flash[:notice] = t('.success') if badges.present?
+
       TestsMailer.completed_test(@result).deliver_now
       redirect_to result_result_path(@result)
     else
