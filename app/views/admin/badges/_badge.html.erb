@@ -3,6 +3,7 @@
     <%= content_tag :span, badge.title, class: 'badge-title' %>
   </td>
   <td class="align-middle"><%=badge.picture%></td>
+  <td class="align-middle"><%=badge.rule%></td>
   <td class="align-middle"><%= link_to t('.show'),admin_badge_path(badge)%>
   <td class="align-middle"><%= link_to t('.edit'), edit_admin_badge_path(badge)%></td>
   <td class="align-middle"><%= link_to t('.delete'),

@@ -1,54 +1,18 @@
-<div>
-  <h3 class="text-center">All Badges </h3>
-  <table class="table table-info table-sm">
-    <thead>
-    
-      <tr>
-        <th scope="col">Bagde title</th>
-        <th scope="col">Bagde picture</th>
-        <th scope="col">Bagde rule</th>      
-        <th scope="col">Bagde parameter</th>
-      </tr>
-    </thead>
-    <% @badges.each do |badge|%>
-    <tbody>  
-      <tr>      
-        <td><%= badge.title %></td>
-        <td><%= badge.picture %></td>
-        <td><%= badge.rule %></td> 
-        <td><%= badge.parameter %></td>       
-      </tr>    
-    </tbody>
-    <% end %> 
-  </table>    
-</div>
-
-
-
-
-
-<div>
-  <h3 class="text-center">User Badges </h3>
-  <table class="table table-info table-sm">
-    <thead>
-      <tr>
-        <th scope="col">Bagde title</th>
-        <th scope="col">Bagde picture</th>
-        <th scope="col">Bagde rule</th>      
-        <th scope="col">Bagde parameter</th>
-      </tr>
-    </thead>
-    <% @user_badges.each do |user| %>
-      <% user.badges.each do |badge|%>
-        <tbody>
+<div class="row mt-100%">
+  <div class="col col-md-100%">
+    <h3 class="text-center">User Badges </h3>
+      <table class="table table-info table-sm">
+        <thead>
           <tr>
-            <td><%= badge.title %></td>
-            <td><%= badge.picture %></td>
-            <td><%= badge.rule %></td> 
-            <td><%= badge.parameter %></td> 
-          </tr>    
-        </tbody>
-      <% end %>
-    <% end %>
-  </table> 
+            <th scope="col">Bagde title</th>
+            <th scope="col">Bagde picture</th>
+            <th scope="col">Bagde rule</th>      
+            <th scope="col">Bagde parameter</th>
+          </tr>
+        </thead>
+          <tbody>
+            <%= render @badges%>  
+          </tbody>         
+      </table> 
+  </div>
 </div>
