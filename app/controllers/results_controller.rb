@@ -15,10 +15,10 @@ class ResultsController < ApplicationController
     @result.accept!(params[:answer_ids])
     if @result.completed?
       if @result.test_full_completed?
-        badges = BadgeFactory.new(@result).build_badge
+        badges = BadgeServiseToUser.new(@result).add_badge_to_user
 
-        flash[:notice] = t('.success') if badges.present?
-      end  
+        flash[:notice] = t('.success') 
+      end
       TestsMailer.completed_test(@result).deliver_now
       redirect_to result_result_path(@result)
     else
