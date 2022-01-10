@@ -15,7 +15,7 @@ class ResultsController < ApplicationController
     @result.accept!(params[:answer_ids])
     if @result.completed?
       if @result.test_full_completed?
-        badges = BadgeServiseToUser.new(@result).add_badge_to_user
+        AddBadgeToUser.new(@result).call
 
         flash[:notice] = t('.success') 
       end
