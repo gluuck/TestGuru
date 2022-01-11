@@ -1,7 +1,7 @@
 module Badges
   class TestsByCategory < BadgeRuleSpecification
     def win_result?
-      category = Category.where(title: @badge.parameter).first
+      category = Category.find_by(id: @badge.parameter.to_i)
 
       result_request = Result.includes(:test).where(user: @result.user).
                               where(test: {category: category}).count
