@@ -1,8 +1,10 @@
 <nav class="navbar navbar-light bg-light">
   <% if current_user.is_a?(Admin) %>
-    <%= link_to 'TestGuru' , admin_tests_path, class: 'navbar-brand' %>
+    <%= link_to 'TestGuru' , admin_tests_path, class: 'navbar-brand' %> | 
+    <%= link_to 'Badges', admin_badges_path, class: 'navbar-brand' %>
   <% else %>
     <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
+    <h6><%= link_to 'Badges', badges_path, class: 'navbar-brand' %></h6>
   <% end %>
   <span class="navbar-text">
     <% if user_signed_in? %>

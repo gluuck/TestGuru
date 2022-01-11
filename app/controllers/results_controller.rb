@@ -14,6 +14,11 @@ class ResultsController < ApplicationController
   def update
     @result.accept!(params[:answer_ids])
     if @result.completed?
+      if @result.test_full_completed?
+        AddBadgeToUser.new(@result).call
+
+        flash[:notice] = t('.success') 
+      end
       TestsMailer.completed_test(@result).deliver_now
       redirect_to result_result_path(@result)
     else
