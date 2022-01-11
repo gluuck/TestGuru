@@ -1,6 +1,9 @@
 <div class="row mt-100%">
   <div class="col col-md-100%">
     <h1><%= t('.passing')%> : <%= @result.test.title%></h1>
+
+    <div id='timer' data-total="<%= @result.left_time %>" ></div>
+    
     <% if @result.current_question.present?%>
       <div class="progress">
          <%= content_tag :div, class: "progress-bar",

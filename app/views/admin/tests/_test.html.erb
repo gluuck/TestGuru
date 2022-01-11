@@ -1,14 +1,19 @@
 <tr>
-  <td class="align-middle">
+  <td class="text-center">
     <%= content_tag :span, test.title, class: 'test-title', data: {test_id: test.id}%>
     <%= render 'form_inline', test: test == @test ? @test : test %>
   </td>
-  <td class="align-middle"><%=test.level%></td>
-  <td class="align-middle"><%= link_to t('.show'),admin_test_path(test)%>
-  <td class="align-middle"><%= link_to t('.edit'), edit_admin_test_path(test),
+  <td class="text-center"><%=test.level%></td>
+  <% if test.timer?%>
+    <td class="text-center"><%= test.timer.to_s + " min" %></td>
+  <% else %>
+    <td class="text-center"> - </td>
+  <%end%>
+  <td class="text-center"><%= link_to t('.show'),admin_test_path(test)%>
+  <td class="text-center"><%= link_to t('.edit'), edit_admin_test_path(test),
                                data: {test_id: test.id},
                                class: 'form-inline-link'%></td>
-  <td class="align-middle"><%= link_to t('.delete'),
+  <td class="text-center"><%= link_to t('.delete'),
                                admin_test_path(test),
                                data: {confirm: 'Are yuu sure?'},
                                method: :delete %>

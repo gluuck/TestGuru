@@ -1,6 +1,10 @@
 <tr >
-  <td ><%=test.title%></td>
-  <td ><%=test.level%></td>
-  
-  <td><%= button_to t('.start'), start_test_path(test), class: 'btn btn-primary btn-sm'%></td>
+  <td class="text-center" ><%=test.title%></td>
+  <td class="text-center" ><%=test.level%></td>
+  <% if test.timer?%>
+    <td class="text-center"><%= test.timer.to_s + " min" %></td>
+  <% else %>
+    <td class="text-center"> - </td>
+  <%end%>
+  <td class="text-center"><%= button_to t('.start'), start_test_path(test), class: 'btn btn-primary btn-sm'%></td>
 </tr>
