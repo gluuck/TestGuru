@@ -14,7 +14,7 @@ const startTimer = () => {
         }
         let leftTime = timeStringToInt(timer.innerText)
         if ( leftTime <= 0) {
-            return document.querySelector('input[type="submit"]').click()
+            document.getElementById('test-submit').click()
         }
         leftTime -= 1
         timer.innerText = intToTimeString(leftTime)

@@ -22,7 +22,7 @@
             <% end %>
           </div>
         <% end %>
-        <p><%= form.submit t('.next'), class: 'btn btn-primary btn-sm'%></p>
+        <p><%= form.submit t('.next'), id: 'test-submit', class: 'btn btn-primary btn-sm'%></p>
       <% end %>
         <p><%= link_to t('.Gist Question'), gists_path(result_id: @result.id), method: :post %></p>
     <% else %>

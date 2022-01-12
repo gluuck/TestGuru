@@ -15,10 +15,10 @@ class Result < ApplicationRecord
   end
 
   def completed?
-    current_question.nil? || time_left
+    current_question.nil? || time_left?
   end
 
-  def time_left
+  def time_left?
     Time.current - created_at > test.timer.minutes
   end
 
