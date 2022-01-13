@@ -2,12 +2,13 @@
 
 <table class="table table-primary">
   <tr>
-    <th class="sort-by-title pointer"><%= t('.title')%>
+    <th class="sort-by-title pointer text-center"><%= t('.title')%>
       <%= octicon 'arrow-up', class: 'text-success hide' %>
       <%= octicon 'arrow-down', class: 'text-success hide' %>
     </th>
-    <th><%= t('.level')%></th>
-    <th><%= t('.action')%></th>
+    <th class="text-center"><%= t('.level')%></th>
+    <th class="text-center"><%= t('.timer')%></th>
+    <th class="text-center"><%= t('.action')%></th>
   </tr>
   <%= render @tests%>
 </table>

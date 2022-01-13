@@ -15,7 +15,18 @@ class Result < ApplicationRecord
   end
 
   def completed?
-    current_question.nil?
+    current_question.nil? || time_left?
+  end
+
+  def time_left?
+    Time.current - created_at > test.timer.minutes
+  end
+
+  def left_time
+    return if self.test.timer.nil?
+
+    test_time = (created_at + test.timer * 60) - Time.current
+    test_time.positive? ? test_time.to_i : 0
   end
 
   def results_percent

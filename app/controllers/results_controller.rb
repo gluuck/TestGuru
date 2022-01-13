@@ -17,9 +17,10 @@ class ResultsController < ApplicationController
       if @result.test_full_completed?
         AddBadgeToUser.new(@result).call
 
-        flash[:notice] = t('.success') 
+        flash[:notice] = t('.success')
+        TestsMailer.completed_test(@result).deliver_now
+        redirect_to result_result_path(@result)
       end
-      TestsMailer.completed_test(@result).deliver_now
       redirect_to result_result_path(@result)
     else
       render :show

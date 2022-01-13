@@ -8,6 +8,7 @@ require("packs/utilites/sorting")
 require("packs/utilites/password_validate")
 require("packs/utilites/form_inline")
 require("packs/utilites/progress_bar")
+require("packs/utilites/test_timer")
 require("stylesheets/application.scss")
 
 import Rails from "@rails/ujs"

@@ -46,13 +46,13 @@ class Admin::TestsController < Admin::BaseController
 
   def destroy
     @test.destroy!
-    redirect_to admin_tests_path    
+    redirect_to admin_tests_path
   end
 
   private
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id)
+    params.require(:test).permit(:title, :level, :category_id, :timer)
   end
 
   def set_tests
